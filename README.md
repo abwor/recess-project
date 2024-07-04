@@ -1,4 +1,4 @@
-# gas
+# INSTAGAS
 
 A new Flutter project.
 
