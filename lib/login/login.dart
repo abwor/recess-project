@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: use_key_in_widget_constructors
 class LoginSixPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -23,9 +24,9 @@ class LoginSixPage extends StatelessWidget {
                 ),
 
                 const SizedBox(height: 30),
-                _TextFieldCustom(label: 'Email', isPass: false),
+                const _TextFieldCustom(label: 'Email', isPass: false),
                 const SizedBox(height: 20),
-                _TextFieldCustom(label: 'Password', isPass: true),
+                const _TextFieldCustom(label: 'Password', isPass: true),
                 const SizedBox(height: 60),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -38,14 +39,14 @@ class LoginSixPage extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {},
-                      highlightColor: Colors.transparent,
-                      splashColor: Colors.transparent,
+                      highlightColor: const Color.fromARGB(0, 228, 193, 193),
+                      splashColor: const Color.fromARGB(0, 219, 145, 145),
                       child: Container(
                         height: 80,
                         width: 80,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
-                          gradient: const LinearGradient(
+                          gradient: LinearGradient(
                             begin: Alignment.topLeft,
                             end: Alignment.topRight,
                             colors: [
@@ -54,7 +55,10 @@ class LoginSixPage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        child: const Icon(Icons.arrow_forward, size: 35, color: Colors.white),
+                        child: const Icon(
+                          Icons.arrow_forward,
+                           size: 35, 
+                           color: Color.fromARGB(255, 223, 141, 141)),
                       ),
                     )
                   ],
@@ -91,6 +95,7 @@ class _TextFieldCustom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: sized_box_for_whitespace
     return Container(
       width: MediaQuery.of(context).size.width * 0.9,
       child: TextField(

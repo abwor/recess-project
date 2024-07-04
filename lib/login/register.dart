@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 
 class RegisterSixPage extends StatelessWidget {
@@ -23,11 +25,11 @@ class RegisterSixPage extends StatelessWidget {
                 ),
 
                 const SizedBox(height: 20),
-                _TextFieldCustom(label: 'Name', isPass: false),
+                const _TextFieldCustom(label: 'Name', isPass: false),
                 const SizedBox(height: 20),
-                _TextFieldCustom(label: 'Email', isPass: false),
+                const _TextFieldCustom(label: 'Email', isPass: false),
                 const SizedBox(height: 20),
-                _TextFieldCustom(label: 'Password', isPass: true),
+                const _TextFieldCustom(label: 'Password', isPass: true),
                 const SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,9 +47,9 @@ class RegisterSixPage extends StatelessWidget {
                       child: Container(
                         height: 80,
                         width: 80,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
-                          gradient: const LinearGradient(
+                          gradient: LinearGradient(
                             begin: Alignment.topLeft,
                             end: Alignment.topRight,
                             colors: [
@@ -88,6 +90,7 @@ class _TextFieldCustom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: sized_box_for_whitespace
     return Container(
       width: MediaQuery.of(context).size.width * 0.9,
       child: TextField(

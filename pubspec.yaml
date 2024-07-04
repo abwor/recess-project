@@ -1,27 +1,70 @@
 name: gas
-description: A new Flutter project.
+description: A gas delivery and management app for LPG and accessories.
 
 environment:
-  sdk: '^3.4.0'
+  sdk: '>=3.4.0 <4.0.0'
 
 dependencies:
+  carousel_slider: ^4.2.1
   flutter:
     sdk: flutter
   provider: ^6.1.2
-
-
-  
-  # Add other dependencies as needed
-
-
-
+  font_awesome_flutter: ^10.7.0
+  curved_navigation_bar: ^1.0.6
+  url_launcher: ^6.1.10
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_lints: ^2.0.1
 
 flutter:
+  uses-material-design: true
+
   assets:
-    - Assets/logo.png
-    - Assets/googleIcon.png
-    - Assets/facebook.png
+    - assets/logo.png
+    - assets/facebook.png
+    - assets/images/
+    
+    - assets/googleIcon.png
+    - assets/shell.jpg
+    - assets/stabex.jpg
+    - assets/total.jpg
+    - assets/Rubis.jpg
+    - assets/total1.jpg
+    - assets/total2.jpg
+    - assets/total3.jpg
+    - assets/images/first.jpeg
+    - assets/images/five.jpeg
+    - assets/images/four.jpeg
+    - assets/images/petrol.jpeg
+    - assets/images/third.jpeg
+    - assets/images/six.jpeg
+    - assets/images/second.jpeg
+    - assets/images/images.jpeg
+    - assets/images/simuyo.jpeg
+    - assets/images/refill.png
+    - assets/images/gas.jpg
+    - assets/images/lub.jpeg
+    - assets/images/stabex1.jpg
+    - assets/images/stabex2.jpeg
+    - assets/images/stabex3.jpeg
+    - assets/images/stabex4.jpeg
+    - assets/images/total1.webp
+    - assets/images/shell2.jpeg
+    - assets/images/shell1.webp
+    - assets/images/rubis6kg.webp
+    - assets/images/rubisburner.jpeg
+    - assets/images/rubis12.jpeg
+    - assets/images/rubisgrill.jpg
+    - assets/images/6rega.webp
+    
+
+  fonts:
+    - family: Roboto
+    
+       
+
+      
+        
+        
