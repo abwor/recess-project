@@ -5,8 +5,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:gas/product_details.dart';
-import 'package:gas/cart_screen.dart';
+import 'package:gas/screens/cart_screen.dart';
 import 'package:gas/cart_provider.dart'; // Assuming you have a CartProvider
+import 'package:gas/screens/profile.dart';
 
 // ignore: camel_case_types
 class petrol_one extends StatelessWidget {
@@ -20,7 +21,8 @@ class petrol_one extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Choose products'),
+          title:  Image.asset('assets/Rubis.jpg',
+           height: 40),
           actions: [
             IconButton(
               icon: const FaIcon(FontAwesomeIcons.cartShopping),
@@ -99,7 +101,7 @@ class ProductGrid extends StatelessWidget {
   List<Map<String, dynamic>> _getProductsByCategory(String category) {
     final allProducts = [
       {
-        'assetPath': 'assets/images/rubis6kg.jpeg',
+        'assetPath': 'assets/images/rubis6kg.webp',
         'title': 'Refill',
         'price': 55000,
         'category': 'LPG',
@@ -194,7 +196,7 @@ class ProductGrid extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(assetPath, height: 100, width: 100),
+            Image.asset(assetPath, height: 170, width: 200),
             const SizedBox(height: 8),
             Text(title, style: const TextStyle(fontSize: 16)),
             const SizedBox(height: 8),

@@ -36,25 +36,30 @@ class HomePage extends StatelessWidget {
     Option('assets/rubis.jpg', petrol_one.routeName, 'Rubis'),
     Option('assets/shell.jpg', PetrolStation2.routeName, 'Shell'),
     Option('assets/stabex.jpg', PetrolStation3.routeName, 'Stabex'),
-    Option('assets/total.jpg', PetrolStation4.routeName, 'Total'),
+    Option('assets/total.jpg', PetrolStation4.routeName, 'TotalEnergies'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Welcome\nPlease choose your gas station',
-          style: TextStyle(fontSize: 20.0),
+        title: const Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(
+              'Welcome! \nPlease choose your gas station',
+              style: TextStyle(fontSize: 20.0),
+              textAlign: TextAlign.left,
+            ),
+          ],
         ),
-        centerTitle: true,
       ),
       body: GridView.builder(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(9.0),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          crossAxisSpacing: 10.0,
-          mainAxisSpacing: 10.0,
+          crossAxisSpacing: 9.0,
+          mainAxisSpacing: 9.0,
         ),
         itemCount: options.length,
         itemBuilder: (context, index) {

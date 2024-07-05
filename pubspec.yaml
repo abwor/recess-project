@@ -58,6 +58,12 @@ flutter:
     - assets/images/rubis12.jpeg
     - assets/images/rubisgrill.jpg
     - assets/images/6rega.webp
+    - assets/images/refill.jpeg
+    - assets/images/new kit.webp
+    - assets/images/newtotal.jpg
+    - assets/images/newto.jpeg
+    - assets/images/total6.jpg
+    
     
 
   fonts:

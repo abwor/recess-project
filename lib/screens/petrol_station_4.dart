@@ -5,7 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:gas/product_details.dart';
-import 'package:gas/cart_screen.dart';
+import 'package:gas/screens/cart_screen.dart';
 import 'package:gas/cart_provider.dart'; // Assuming you have a CartProvider
 
 // ignore: camel_case_types
@@ -20,7 +20,8 @@ class PetrolStation4 extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Choose products'),
+          title:  Image.asset('assets/total.jpg',
+           height: 70),
           actions: [
             IconButton(
               icon: const FaIcon(FontAwesomeIcons.cartShopping),
@@ -99,7 +100,7 @@ class ProductGrid extends StatelessWidget {
   List<Map<String, dynamic>> _getProductsByCategory(String category) {
     final allProducts = [
       {
-        'assetPath': 'assets/images/rubis6kg.jpeg',
+        'assetPath': 'assets/images/total6.jpg',
         'title': 'Refill',
         'price': 55000,
         'category': 'LPG',
@@ -108,18 +109,18 @@ class ProductGrid extends StatelessWidget {
         'usageInstructions': 'Step 1: Ensure that the burner knob is in an off position.\nStep 2: Screw the burner into the valve taking care not to damage the threads until it locks firmly into place.\nStep 3: Turn on the gas.'
       },
       {
-        'assetPath': 'assets/images/rubis12.jpeg',
+        'assetPath': 'assets/images/newtotal.jpg',
         'title': 'New Kits',
-        'price': 211000,
+        'price': 279000,
         'category': 'LPG',
         'description': 'Complete kit for new users.',
         'costSplit': 'LPG Kit\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t211000Ush',
         'usageInstructions': 'Step 1: Ensure that the burner knob is in an off position.\nStep 2: Screw the burner into the valve taking care not to damage the threads until it locks firmly into place.\nStep 3: Turn on the gas.'
       },
       {
-        'assetPath': 'assets/images/rubis6kg.webp',
+        'assetPath': 'assets/images/newto.jpeg',
         'title': 'New Kits',
-        'price': 211000,
+        'price': 183000,
         'category': 'LPG',
         'description': 'Compact & Safe. Ideal for small families.',
         'costSplit': 'LPG 6KG\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t53000Ush',
@@ -194,7 +195,7 @@ class ProductGrid extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(assetPath, height: 100, width: 100),
+            Image.asset(assetPath, height: 170, width: 200),
             const SizedBox(height: 8),
             Text(title, style: const TextStyle(fontSize: 16)),
             const SizedBox(height: 8),

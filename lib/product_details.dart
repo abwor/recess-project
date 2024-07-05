@@ -1,5 +1,8 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:gas/screens/petrol_station_2.dart';
+import 'package:provider/provider.dart';
+// Import your CartProvider
 
 class ProductDetails extends StatelessWidget {
   final String image;
@@ -10,14 +13,14 @@ class ProductDetails extends StatelessWidget {
   final String usageInstructions;
 
   const ProductDetails({
-    super.key,
+    Key? key,
     required this.image,
     required this.title,
     required this.price,
     required this.description,
     required this.costSplit,
     required this.usageInstructions,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -116,7 +119,8 @@ class ProductDetails extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      // Handle add to cart action
+                      // Add to cart logic
+                      _addToCart(context);
                     },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
@@ -155,4 +159,22 @@ class ProductDetails extends StatelessWidget {
       ),
     );
   }
+
+  void _addToCart(BuildContext context) {
+    final cartProvider = Provider.of<CartProvider>(context, listen: false);
+    cartProvider.addToCart({
+      'image': image,
+      'title': title,
+      'price': price,
+    });
+
+    // Show a snackbar or dialog to confirm addition to cart
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('$title added to cart'),
+        duration: const Duration(seconds: 2),
+      ),
+    );
+  }
 }
+

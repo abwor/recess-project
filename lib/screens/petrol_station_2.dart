@@ -5,7 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:gas/product_details.dart';
-import 'package:gas/cart_screen.dart';
+import 'package:gas/screens/cart_screen.dart';
 import 'package:gas/cart_provider.dart'; // Assuming you have a CartProvider
 
 // ignore: camel_case_types
@@ -20,7 +20,9 @@ class PetrolStation2 extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Choose products'),
+          title: Image.asset('assets/shell.jpg',
+           height: 40,
+          ),
           actions: [
             IconButton(
               icon: const FaIcon(FontAwesomeIcons.cartShopping),
@@ -55,9 +57,9 @@ class PetrolStation2 extends StatelessWidget {
             FaIcon(FontAwesomeIcons.userAlt, size: 26),
             FaIcon(FontAwesomeIcons.bars, size: 26),
           ],
-          color: const Color.fromRGBO(241, 179, 7, 1),
+          color: const Color.fromARGB(255, 241, 206, 4),
           buttonBackgroundColor: Colors.white,
-          backgroundColor: const Color.fromARGB(255, 184, 197, 186),
+          backgroundColor: const Color.fromRGBO(212, 48, 7, 1),
           animationCurve: Curves.easeInOut,
           animationDuration: const Duration(milliseconds: 600),
           onTap: (index) {
@@ -99,7 +101,7 @@ class ProductGrid extends StatelessWidget {
   List<Map<String, dynamic>> _getProductsByCategory(String category) {
     final allProducts = [
       {
-        'assetPath': 'assets/images/rubis6kg.jpeg',
+        'assetPath': 'assets/images/shell2.jpeg',
         'title': 'Refill',
         'price': 55000,
         'category': 'LPG',
@@ -108,18 +110,18 @@ class ProductGrid extends StatelessWidget {
         'usageInstructions': 'Step 1: Ensure that the burner knob is in an off position.\nStep 2: Screw the burner into the valve taking care not to damage the threads until it locks firmly into place.\nStep 3: Turn on the gas.'
       },
       {
-        'assetPath': 'assets/images/rubis12.jpeg',
+        'assetPath': 'assets/images/shell1.webp',
         'title': 'New Kits',
-        'price': 211000,
+        'price': 173000,
         'category': 'LPG',
         'description': 'Complete kit for new users.',
         'costSplit': 'LPG Kit\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t211000Ush',
         'usageInstructions': 'Step 1: Ensure that the burner knob is in an off position.\nStep 2: Screw the burner into the valve taking care not to damage the threads until it locks firmly into place.\nStep 3: Turn on the gas.'
       },
       {
-        'assetPath': 'assets/images/rubis6kg.webp',
+        'assetPath': 'assets/images/new kit.webp',
         'title': 'New Kits',
-        'price': 211000,
+        'price': 183000,
         'category': 'LPG',
         'description': 'Compact & Safe. Ideal for small families.',
         'costSplit': 'LPG 6KG\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t53000Ush',
@@ -128,7 +130,7 @@ class ProductGrid extends StatelessWidget {
       {
         'assetPath': 'assets/images/rubisburner.jpeg',
         'title': 'Gas Burner',
-        'price': 27500,
+        'price': 20000,
         'category': 'LPG Accessories',
         'description': 'Durable gas burner.',
         'costSplit': 'Burner\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t27500Ush',
@@ -155,7 +157,7 @@ class ProductGrid extends StatelessWidget {
       {
         'assetPath': 'assets/images/hospiper.jpg',
         'title': 'Hosepipe',
-        'price': 26000,
+        'price': 20000,
         'category': 'LPG Accessories',
         'description': 'Durable gas hosepipe.',
         'costSplit': 'Hosepipe\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t26000Ush',
@@ -194,11 +196,11 @@ class ProductGrid extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(assetPath, height: 100, width: 100),
+            Image.asset(assetPath, height: 150, width: 240),
             const SizedBox(height: 8),
             Text(title, style: const TextStyle(fontSize: 16)),
             const SizedBox(height: 8),
-            Text('Starting at $price Ush', style: const TextStyle(fontSize: 14)),
+            Text('Ush $price ', style: const TextStyle(fontSize: 14)),
           ],
         ),
       ),
@@ -300,8 +302,7 @@ class ProductDetails extends StatelessWidget {
                 children: [
                   _buildVariantButton('6KG', 1495.0, true),
                   const SizedBox(width: 16),
-                  _buildVariantButton('13KG', 3330.0, false),
-                ],
+                                 ],
               ),
               const SizedBox(height: 16),
               const Text(
@@ -331,7 +332,7 @@ class ProductDetails extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Total\n$price KES',
+                    'Total\n$price Ush',
                     style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   ElevatedButton(
